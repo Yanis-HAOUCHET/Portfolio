@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/cs2?family=Poopins:wght@300;400;500;600;700;800;900&display-swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 
 *{
@@ -225,6 +225,13 @@ section{
 .home-content h1{
     font-size: 5rem;
     font-weight: 700;
+}
+.home-content .role-tag{
+    font-size: 1.9rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
 }
 .home-content p{
 font-size: 1.6rem;
@@ -507,72 +514,141 @@ font-size: 3rem;
     font-size: 2rem;
     color: #333;
 }
-.testimonial-container{
+
+/* featured project card */
+.featured-project{
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    padding: 5rem 1rem;
-}
-.testimonial-container .testimonial-wrapper{
-    position: relative;
-  max-width: 90rem;
-  width: 100%;
-  padding: 5rem;  
-}
-
-.testimonial-wrapper .testimonial-box {
-    padding: 1rem;
-    border-radius: 2rem;
+    align-items: stretch;
+    background: var(--bg-color);
+    border-radius: 2.5rem;
+    box-shadow: 0 .1rem 2rem var(--shadow-color);
     overflow: hidden;
+    margin: 0 1rem 3rem;
+    border: .15rem solid var(--main-color);
+}
+.featured-project-info{
+    flex: 1 1 60%;
+    padding: 4rem;
+}
+.featured-tag{
+    display: inline-block;
+    background: var(--main-color);
+    color: var(--white-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    padding: .5rem 1.4rem;
+    border-radius: 5rem;
+    margin-bottom: 1.5rem;
+}
+.featured-project-info h3{
+    font-size: 3rem;
+    margin-bottom: 1.2rem;
+}
+.featured-project-info p{
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+.featured-tech{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+.featured-tech span{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text-color);
+    background: var(--shadow-color);
+    padding: .5rem 1.4rem;
+    border-radius: 5rem;
+}
+.featured-project-visual{
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--main-color), #7c3aed);
+    min-height: 22rem;
+}
+.featured-project-visual i{
+    font-size: 9rem;
+    color: var(--white-color);
+    opacity: .9;
+}
+@media (max-width: 800px){
+    .featured-project{
+        flex-direction: column;
+    }
+    .featured-project-visual{
+        order: -1;
+        min-height: 16rem;
+    }
 }
 
-.testimonial-content .testimonial-slide{
-display: flex;
-align-items: center;
-flex-direction: column;
-background: var(--bg-color);
-border-radius: 2rem;
-box-shadow: 0 .1rem .5rem var(--shadow-color);
-padding: 3rem 5rem;
-border-top: .8rem solid var(--main-color);
-border-bottom: .8rem solid var(--main-color);
+/* experience timeline */
+.experience{
+    padding-bottom: 8rem;
 }
-
-.testimonial-slide img {
-    width: 14rem;
-    height: 14rem;
-    object-fit: cover;
+.experience .heading{
+    margin-bottom: 5rem;
+}
+.timeline{
+    position: relative;
+    max-width: 90rem;
+    margin: 0 auto;
+    padding-left: 3rem;
+    border-left: .3rem solid var(--main-color);
+}
+.timeline-item{
+    position: relative;
+    margin-bottom: 4rem;
+    padding-left: 3rem;
+}
+.timeline-item:last-child{
+    margin-bottom: 0;
+}
+.timeline-dot{
+    position: absolute;
+    left: -4.05rem;
+    top: .3rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: var(--bg-color);
+    border: .35rem solid var(--main-color);
     border-radius: 50%;
-    border: .5rem solid var(--bg-color);
-    outline:.5rem solid var(--main-color) ;
 }
-.testimonial-slide h3 {
-    font-size: 2.5rem;
-    margin: 2rem 0;
+.timeline-date{
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--main-color);
+    margin-bottom: .6rem;
 }
-.testimonial-slide p {
-    font-size: 1.4rem;
-    text-align: center;
+.timeline-content h3{
+    font-size: 2.2rem;
+    margin-bottom: .3rem;
 }
-
-.testimonial-box .swiper-button-next, .testimonial-box .swiper-button-prev {
-color: var(--main-color);
+.timeline-content h4{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+    opacity: .75;
+    margin-bottom: 1rem;
 }
-.testimonial-box .swiper-button-next{
-    right: 0;
+.timeline-content p{
+    font-size: 1.5rem;
+    line-height: 1.6;
 }
-
-.testimonial-box .swiper-button-prev{
-    left: 0;
-}
-
-.testimonial-box .swiper-pagination-bullet{
-background: rgba(0,0,0, .8);
-}
-
-.testimonial-box .swiper-pagination-bullet-active{
-background: var(--main-color);
+@media (max-width: 500px){
+    .timeline{
+        padding-left: 2rem;
+    }
+    .timeline-dot{
+        left: -3.05rem;
+    }
 }
 
 .contact h2 {
